@@ -3,7 +3,6 @@ package com.wry.mybatis.binding;
 import com.wry.mybatis.session.SqlSession;
 
 import java.lang.reflect.Proxy;
-import java.util.Map;
 
 /**
  * Mapper代理工厂
