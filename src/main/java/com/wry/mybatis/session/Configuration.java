@@ -1,12 +1,29 @@
 package com.wry.mybatis.session;
 
 import com.wry.mybatis.binding.MapperRegistry;
+import com.wry.mybatis.datasource.druid.DruidDataSourceFactory;
+import com.wry.mybatis.mapping.Environment;
 import com.wry.mybatis.mapping.MappedStatement;
+import com.wry.mybatis.transaction.jdbc.JdbcTransactionFactory;
+import com.wry.mybatis.type.TypeAliasRegistry;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Configuration {
+    public Configuration() {
+        typeAliasRegistry.registerAlias("JDBC", JdbcTransactionFactory.class);
+        typeAliasRegistry.registerAlias("DRUID", DruidDataSourceFactory.class);
+    }
+
+    /**
+     * 环境
+     */
+    protected Environment environment;
+    /**
+     * 类型别名注册机
+     */
+    protected TypeAliasRegistry typeAliasRegistry = new TypeAliasRegistry();
     /**
      * 映射注册机
      */
@@ -37,5 +54,15 @@ public class Configuration {
         return mapperRegistry.getMapper(type, sqlSession);
     }
 
+    public TypeAliasRegistry getTypeAliasRegistry() {
+        return typeAliasRegistry;
+    }
 
+    public Environment getEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
 }

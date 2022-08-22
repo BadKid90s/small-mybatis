@@ -1,16 +1,26 @@
 package com.wry.mybatis.test.po;
 
-public class User {
-    private String id;
-    private String userId;
-    private String userHead;
-    private String createTime;
+import java.util.Date;
 
-    public String getId() {
+public class User {
+
+    private Long id;
+    // 用户ID
+    private String userId;
+    // 用户名称
+    private String userName;
+    // 头像
+    private String userHead;
+    // 创建时间
+    private Date createTime;
+    // 更新时间
+    private Date updateTime;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -22,6 +32,14 @@ public class User {
         this.userId = userId;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     public String getUserHead() {
         return userHead;
     }
@@ -30,11 +48,19 @@ public class User {
         this.userHead = userHead;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.wry.mybatis.test.dao.IUserDao">
+<mapper namespace="com.wry.mybatis.test.dao.IUserDao">
 
-    <select id="queryUserName" parameterType="java.lang.Long" resultType="cn.wry.mybatis.test.po.User">
+    <select id="queryUserName" parameterType="java.lang.Long" resultType="com.wry.mybatis.test.po.User">
         SELECT id, userId, userHead, createTime
         FROM user
-        where id = #{id}
+        where userName = #{name}
     </select>
 
 </mapper>

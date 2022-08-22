@@ -16,6 +16,8 @@ dependencies {
     implementation("org.dom4j:dom4j:2.1.3")
 
 //    implementation("org.mybatis:mybatis:3.4.5")
+    implementation("com.alibaba:druid:1.2.11")
+    implementation("mysql:mysql-connector-java:8.0.21")
 }
 
 tasks.getByName<Test>("test") {
